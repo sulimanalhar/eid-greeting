@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تهنئة عيد الأضحى</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- واجهة البداية -->
+  <div id="splash-screen" class="centered-screen">
+    <div class="icons">
+      <span class="icon" id="moon">🌙</span>
+      <span class="icon" id="sheep">🐑</span>
+      <span class="icon" id="laptop">💻</span>
+    </div>
+    <p id="loading-text">جاري تحميل تجربة عيد الأضحى لـ [JOAN]... 🌙🐑💻</p>
+  </div>
+
+  <!-- الصفحة الرئيسية -->
+  <main id="main-content" class="hidden centered-screen">
+    <div class="card">
+      <p class="greeting-text">
+        عيدك مبارك، يا من جمعتِ بين رقة الشعور وذكاء العقول،<br />
+        وخلّيتي حتى الـcode يصير له قلب 🌸💻
+      </p>
+      <button id="expand-btn">Click to Expand 🌟 // رسالة العيد الخاصة</button>
+      <button id="joke-btn" style="margin-top:1rem;">مزحة العيد 😂</button>
+      <div id="joke-message" class="hidden" style="margin-top:1rem; color:#b85c38; font-weight:bold;"></div>
+      <pre id="code-message" class="hidden"></pre>
+      <div id="meat-smell" class="meat-smell hidden">💨🥩 رائحة اللحم تملأ المكان!</div>
+    </div>
+  </main>
+  <div id="sulaiman-signature"> سليمان الحربي ✨</div>
+  <audio id="typing-sound" src="typing.mp3" preload="auto"></audio>
+  <audio id="sheep-sound" src="sheep.mp3" preload="auto"></audio>
+  <audio id="laugh-sound" src="laugh.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

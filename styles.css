@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+body, html {
+  margin: 0; padding: 0;
+  height: 100%;
+  font-family: 'Cairo', sans-serif;
+  background: #f7e9e1; /* وردي فاتح */
+  color: #333;
+  direction: rtl;
+}
+
+.centered-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.icons {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+/* الخروف يرمش عند المرور */
+#sheep:hover {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0.3;}
+}
+
+#greeting-text {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: #fff7f3;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 2rem 3rem;
+  max-width: 500px;
+  width: 90%;
+  transition: box-shadow 0.3s ease;
+  border: 2px dashed #e6b89c;
+  position: relative;
+  overflow: visible;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+#greeting-text {
+  font-size: 1.4rem;
+  color: #5a3e36;
+}
+
+button {
+  cursor: pointer;
+  background-color: #d48b9f;
+  border: none;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c07389;
+}
+
+pre {
+  text-align: left;
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #3d3d3d;
+}
+
+/* ظهور تدريجي */
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* تأثير لرائحة اللحم */
+.meat-smell {
+  font-size: 1.2rem;
+  animation: meatSmellAnim 2.5s infinite;
+  margin-top: 1rem;
+  opacity: 0.85;
+  transition: opacity 0.5s;
+}
+
+@keyframes meatSmellAnim {
+  0% { transform: translateY(0) scale(1); opacity: 0.7;}
+  50% { transform: translateY(-20px) scale(1.1); opacity: 1;}
+  100% { transform: translateY(-40px) scale(1); opacity: 0.3;}
+}
+
+/* تأثير Hover للخروف */
+#sheep:hover::after {
+  content: "بععع! وين الكبش؟ 😂";
+  display: block;
+  font-size: 1.1rem;
+  color: #b85c38;
+  margin-top: 0.5rem;
+  animation: fadeIn 1s;
+}
+
+/* زخرفة حول البطاقة */
+.card::before {
+  content: "🐑";
+  position: absolute;
+  top: -25px; left: -25px;
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.card::after {
+  content: "🥩";
+  position: absolute;
+  bottom: -25px; right: -25px;
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+#sulaiman-signature {
+  position: fixed;
+  top: 18px;
+  left: 24px;
+  background: rgba(255, 247, 243, 0.85);
+  color: #b85c38;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.4rem 1.1rem;
+  border-radius: 20px 0 20px 0;
+  box-shadow: 0 2px 8px rgba(184,92,56,0.07);
+  z-index: 999;
+  letter-spacing: 1px;
+  animation: fadeIn 2s;
+  user-select: none;
+  pointer-events: none;
+}
+
+.signature-line {
+  color: #b85c38;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 1.2rem;
+  display: block;
+  animation: blink-signature 1.2s linear 2;
+}
+
+@keyframes blink-signature {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem 1.5rem;
+  }
+  .icons {
+    font-size: 3rem;
+  }
+  button {
+    width: 100%;
+  }
+}
